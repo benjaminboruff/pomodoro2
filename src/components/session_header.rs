@@ -2,7 +2,7 @@ use crate::SessionTime;
 use sycamore::prelude::*;
 
 #[component]
-pub fn SessionTop<G: Html>(cx: Scope) -> View<G> {
+pub fn SessionHeader<G: Html>(cx: Scope) -> View<G> {
     let session_time: &Signal<SessionTime> = use_context(cx);
     let handle_dec = || {
         let current_session_time = session_time.get().value();

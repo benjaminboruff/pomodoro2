@@ -16,10 +16,13 @@ impl BreakTime {
     }
 }
 
-struct CountDown(u8);
-impl CountDown {
-    fn value(&self) -> u8 {
-        self.0
+struct Countdown((u8, bool));
+impl Countdown {
+    fn time(&self) -> u8 {
+        self.0 .0
+    }
+    fn session(&self) -> bool {
+        self.0 .1
     }
 }
 
@@ -30,7 +33,7 @@ fn App<G: Html>(cx: Scope) -> View<G> {
     provide_context_ref(cx, session_time);
     let break_time = create_signal(cx, BreakTime(5));
     provide_context_ref(cx, break_time);
-    let countdown_time = create_signal(cx, CountDown(25));
+    let countdown_time = create_signal(cx, Countdown((25, true)));
     provide_context_ref(cx, countdown_time);
 
     view! { cx,

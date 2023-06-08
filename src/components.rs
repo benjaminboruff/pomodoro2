@@ -1,3 +1,3 @@
-pub mod break_bottom;
-pub mod session_top;
+pub mod break_footer;
+pub mod session_header;
 pub mod timer;

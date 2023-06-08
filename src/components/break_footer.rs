@@ -2,7 +2,7 @@ use crate::BreakTime;
 use sycamore::prelude::*;
 
 #[component]
-pub fn BreakBottom<G: Html>(cx: Scope) -> View<G> {
+pub fn BreakFooter<G: Html>(cx: Scope) -> View<G> {
     let break_time: &Signal<BreakTime> = use_context(cx);
     let handle_dec = || {
         let current_break_time = break_time.get().value();
